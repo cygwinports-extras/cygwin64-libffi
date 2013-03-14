@@ -1,0 +1,24 @@
+CROSS_HOST="x86_64-pc-cygwin"
+inherit cross
+
+NAME="cygwin64-libffi"
+VERSION=3.0.12
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="FFI library for Cygwin 64bit toolchain"
+DESCRIPTION="The libffi library provides a portable, high level programming
+interface to various calling conventions. This allows a programmer to call any
+function specified by a call interface description at run-time."
+HOMEPAGE="http://sourceware.org/libffi/"
+SRC_URI="mirror://sourceware/libffi/libffi-${VERSION}.tar.gz"
+SRC_DIR="libffi-${VERSION}"
+PATCH_URI="3.0.12-cygwin.patch"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	rm -fr ${D}${CROSS_DATADIR}/{info,man}/
+}
+
+KEEP_LA_FILES="none"
