@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-pc-cygwin"
 inherit cross
 
 NAME="cygwin64-libffi"
-VERSION=3.0.12
+VERSION=3.0.13
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="FFI library for Cygwin 64bit toolchain"
